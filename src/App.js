@@ -6,6 +6,7 @@ import TodoList from './components/TodoList';
 
 
 // import './App.css';
+// does not have app.css
 
 function App() {
   return (
