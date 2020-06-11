@@ -34,7 +34,9 @@ export default class App extends Component {
       item:'',
       id:uuidv4(),
       editItem:false
-    },()=>console.log(this.state))
+    }
+    // ,()=>console.log(this.state)
+    )
   }
 
   clearList = (event) => {
@@ -61,9 +63,11 @@ export default class App extends Component {
             </h3>
 
 
-          </div>
+        </div>
           <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit} editItem={this.state.editItem}/>
+        </div>
 
+        <div>
           <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
         </div>
       </div>
