@@ -40,15 +40,27 @@ export default class App extends Component {
   }
 
   clearList = (event) => {
-    console.log("clear list")
+    this.setState({
+      items:[]
+    })
   }
 
-  handleDelete = (event) => {
-    console.log("handle Delete")
+  handleDelete = (id) => {
+    const filteredItem = this.state.items.filter(item => item.id!==id);
+    this.setState({
+      items: filteredItem
+    })
   }
 
-  handleEdit = (event) => {
-    console.log("handle Edit")
+  handleEdit = (id) => {
+    const filteredItem = this.state.items.filter(item => item.id!==id);
+    const selectedItem = this.state.items.find(item => item.id===id);
+    this.setState({
+      items:filteredItem,
+      item:selectedItem.title,
+      id:id,
+      editItem:true
+    })
   }
 
 
